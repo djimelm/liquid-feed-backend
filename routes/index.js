@@ -1,21 +1,9 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const app = express();
+const express = require("express");
+const router = express.Router();
 
-// Middleware
-app.use(bodyParser.json());
+const userRoutes = require("./users");
+// You can add more routes here
 
-// Import routes
-const userRoutes = require('./routes/users');
-const deviceRoutes = require('./routes/devices');
-// Add more routes as needed
+router.use("/users", userRoutes);
 
-// Use routes
-app.use('/users', userRoutes);
-app.use('/devices', deviceRoutes);
-// Add more route uses as needed
-
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+module.exports = router;

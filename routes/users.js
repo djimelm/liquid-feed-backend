@@ -1,30 +1,18 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const { User } = require('../models');
 
-// Route to create a new user
-router.post('/signup', async (req, res) => {
-  const { username, password, email } = req.body;
-  try {
-    const user = await User.create({ username, password, email });
-    res.json(user);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
+const users = [{ username: "testuser", password: "password123" }];
 
-// Route to log in a user
-router.post('/login', async (req, res) => {
+router.post("/login", (req, res) => {
   const { username, password } = req.body;
-  try {
-    const user = await User.findOne({ where: { username } });
-    if (user && user.password === password) {
-      res.json({ token: 'dummy-token' }); // Implement proper token handling
-    } else {
-      res.status(401).send('Invalid credentials');
-    }
-  } catch (error) {
-    res.status(500).json({ error: error.message });
+  const user = users.find(
+    (u) => u.username === username && u.password === password
+  );
+
+  if (user) {
+    res.status(200).json({ message: "Login successful" });
+  } else {
+    res.status(401).json({ message: "Invalid username or password" });
   }
 });
 

@@ -71,3 +71,9 @@ npm install cors
 npx cypress open
 
 ```
+
+## Data base
+
+```shell
+sudo service postgresql start
+```

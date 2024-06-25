@@ -77,3 +77,10 @@ npx cypress open
 ```shell
 sudo service postgresql start
 ```
+
+## Run Migration after creating the data base
+
+```shell
+npx sequelize-cli migration:generate --name create-NAME_OF_THE_TABLE
+npx sequelize-cli db:migrate
+```

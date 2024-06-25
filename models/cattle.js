@@ -26,11 +26,11 @@ const Cattle = sequelize.define(
       allowNull: false,
     },
     startTime: {
-      type: DataTypes.TIME,
+      type: DataTypes.DATE,
       allowNull: false,
     },
     endTime: {
-      type: DataTypes.TIME,
+      type: DataTypes.DATE,
       allowNull: false,
     },
     wheelDistance: {

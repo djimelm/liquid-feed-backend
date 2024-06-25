@@ -25,11 +25,11 @@ module.exports = {
         allowNull: false,
       },
       startTime: {
-        type: Sequelize.TIME,
+        type: Sequelize.DATE,
         allowNull: false,
       },
       endTime: {
-        type: Sequelize.TIME,
+        type: Sequelize.DATE,
         allowNull: false,
       },
       wheelDistance: {

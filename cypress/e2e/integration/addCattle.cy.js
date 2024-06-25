@@ -4,12 +4,12 @@ describe("Cattle API", () => {
       method: "POST",
       url: "http://localhost:3000/cattles/add",
       body: {
-        cattleID: "3",
+        cattleID: "1",
         cattleName: "Bob",
-        deviceLocation: "Stillwater",
+        deviceLocation: "Edmond",
         lbs: 99.85,
         startTime: "2024-05-26 10:15:00", // Correct format
-        endTime: "2024-05-26 10:22:00", // Correct format
+        endTime: "2024-05-27 11:30:00", // Correct format
         wheelDistance: 150,
         date: "2024-05-26 00:00:00.000 +00:00", // Correct format
       },

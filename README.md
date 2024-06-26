@@ -84,3 +84,13 @@ sudo service postgresql start
 npx sequelize-cli migration:generate --name create-NAME_OF_THE_TABLE
 npx sequelize-cli db:migrate
 ```
+
+## Contributing
+
+None
+
+## Contact
+
+- Name : **Michael Djimeli**
+- Email : **mdjimel@okstate.edu**
+- GitHub : **djimelm**

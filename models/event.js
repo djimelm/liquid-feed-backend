@@ -45,9 +45,17 @@ const Event = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    deviceName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     feedName: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
+    },
+    deviceStatus: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
   },
   {

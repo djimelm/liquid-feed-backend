@@ -14,7 +14,9 @@ router.post("/add", async (req, res) => {
       wheelDistance,
       date,
       deviceID,
+      deviceName,
       feedName,
+      deviceStatus,
     } = req.body;
     const newCattle = await Event.create({
       cattleID,
@@ -26,7 +28,9 @@ router.post("/add", async (req, res) => {
       wheelDistance,
       date,
       deviceID,
+      deviceName,
       feedName,
+      deviceStatus,
     });
     res
       .status(201)

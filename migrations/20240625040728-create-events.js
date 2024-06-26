@@ -44,9 +44,17 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      deviceName: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       feedName: {
         type: Sequelize.STRING,
-        allowNull: true,
+        allowNull: false,
+      },
+      deviceStatus: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
       },
       createdAt: {
         type: Sequelize.DATE,

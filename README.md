@@ -94,3 +94,15 @@ None
 - Name : **Michael Djimeli**
 - Email : **mdjimel@okstate.edu**
 - GitHub : **djimelm**
+
+## Routes use to get and post data
+
+```js
+// Use routes
+app.use("/users", userRoutes); //
+app.use("/devices", deviceRoutes);
+app.use("/cattles", cattleRoutes);
+app.use("/events", eventRoutes); // route to get the recent event
+app.use("/download", downloadRoutes); // route to download csv and wxcel file
+// Add more route uses as needed
+```

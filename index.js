@@ -16,11 +16,11 @@ const downloadRoutes = require("./routes/download");
 // Add more routes as needed
 
 // Use routes
-app.use("/users", userRoutes);
+app.use("/users", userRoutes); //
 app.use("/devices", deviceRoutes);
 app.use("/cattles", cattleRoutes);
-app.use("/events", eventRoutes);
-app.use("/download", downloadRoutes);
+app.use("/events", eventRoutes); // route to get the recent event
+app.use("/download", downloadRoutes); // route to download csv and wxcel file
 // Add more route uses as needed
 
 /*const port = process.env.PORT || 3000;

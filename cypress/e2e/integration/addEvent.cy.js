@@ -12,7 +12,7 @@ describe("Event API", () => {
         endTime: "2024-05-27 11:30:00", // Correct format
         wheelDistance: 99,
         date: "2024-05-26 00:00:00.000 +00:00", // Correct format
-        deviceID: "02",
+        deviceID: "03",
         deviceName: "Zoom",
         feedName: "M3n",
         deviceStatus: 1,

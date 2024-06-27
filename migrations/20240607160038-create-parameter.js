@@ -1,37 +1,56 @@
-'use strict';
-/** @type {import('sequelize-cli').Migration} */
+"use strict";
+
 module.exports = {
-  async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Parameters', {
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.createTable("Parameters", {
       id: {
-        allowNull: false,
-        autoIncrement: true,
+        type: Sequelize.INTEGER,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        autoIncrement: true,
       },
-      device_id: {
-        type: Sequelize.INTEGER
+      cattleID: {
+        type: Sequelize.STRING,
+        allowNull: false,
       },
-      parameter_name: {
-        type: Sequelize.STRING
+      cattleName: {
+        type: Sequelize.STRING,
+        allowNull: false,
       },
-      parameter_value: {
-        type: Sequelize.INTEGER
+      feedLimit: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
       },
-      timestamp: {
-        type: Sequelize.DATE
+
+      startTime: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+      endTime: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+      date: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+      feedName: {
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       createdAt: {
+        type: Sequelize.DATE,
         allowNull: false,
-        type: Sequelize.DATE
+        defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
       },
       updatedAt: {
+        type: Sequelize.DATE,
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
+      },
     });
   },
-  async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Parameters');
-  }
+
+  down: async (queryInterface, Sequelize) => {
+    await queryInterface.dropTable("Parameters");
+  },
 };

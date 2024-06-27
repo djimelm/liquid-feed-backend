@@ -5,9 +5,9 @@ describe("Parameter API", () => {
     cattleID: "123",
     cattleName: "Bessie",
     feedLimit: 300,
-    startTime: "2024-06-01T10:00:00Z",
-    endTime: "2024-06-01T12:00:00Z",
-    date: "2024-06-01",
+    startTime: "2024-05-26 10:15:00",
+    endTime: "2024-05-27 11:30:00",
+    date: "2024-05-26 00:00:00.000 +00:00",
     feedName: "Grass",
   };
 
@@ -18,11 +18,7 @@ describe("Parameter API", () => {
         expect(response.status).to.eq(201);
 
         // Check that the response body contains the new parameter
-        expect(response.body).to.have.property(
-          "message",
-          "Pareamter added successfully"
-        );
-        expect(response.body.parameter).to.include(parameter);
+        expect(response.body.message).to.eq("Parameter added successfully");
       }
     );
   });

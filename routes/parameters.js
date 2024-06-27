@@ -22,10 +22,12 @@ router.post("/add", async (req, res) => {
       date,
       feedName,
     });
-    res.status(201).json({
-      message: "Pareamter added successfully",
-      parameter: newParameter,
-    });
+    res
+      .status(201)
+      .json({
+        message: "Parameter added successfully",
+        parameter: newParameter,
+      });
   } catch (error) {
     res.status(500).json({ message: "Error adding parameter", error });
   }

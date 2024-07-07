@@ -14,6 +14,7 @@ const cattleRoutes = require("./routes/cattles"); // Add this line
 const eventRoutes = require("./routes/events");
 const downloadRoutes = require("./routes/download");
 const parameterRoutes = require("./routes/parameters");
+const feedRoutes = require("./routes/feeds");
 // Add more routes as needed
 
 // Use routes
@@ -23,6 +24,7 @@ app.use("/cattles", cattleRoutes);
 app.use("/events", eventRoutes); // route to get the recent event
 app.use("/download", downloadRoutes); // route to download csv and excel file
 app.use("/parameters", parameterRoutes); // parameter routes
+app.use("/feeds", feedRoutes); // parameter routes
 
 // Add more route uses as needed
 

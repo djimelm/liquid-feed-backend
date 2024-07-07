@@ -18,7 +18,7 @@ router.get("/getdevices", async (req, res) => {
     });
   }
 });
-
+// route to get device state
 router.get("/getdevicesstate", async (req, res) => {
   try {
     const [results] = await sequelize.query(`

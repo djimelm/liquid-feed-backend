@@ -4,10 +4,10 @@ describe("Cattle API", () => {
       method: "POST",
       url: "http://localhost:3000/feeds/add",
       body: {
-        feedName: "Inki",
-        dm: 55,
-        calibration: 10,
-        deviceID: "02",
+        feedName: "Uree",
+        dm: 65,
+        calibration: 2,
+        deviceID: "0DM",
       },
     }).then((response) => {
       expect(response.status).to.eq(201);

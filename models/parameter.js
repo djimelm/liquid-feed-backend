@@ -39,7 +39,7 @@ const Parameter = sequelize.define(
     },
   },
   {
-    tableName: "Parameter",
+    tableName: "Parameters",
     timestamps: true,
   }
 );

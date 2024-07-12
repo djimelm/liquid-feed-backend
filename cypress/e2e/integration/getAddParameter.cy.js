@@ -1,26 +1,39 @@
 // cypress/integration/parameter.spec.js
 
-describe("Parameter API", () => {
-  const parameter = {
-    cattleID: "123",
-    cattleName: "Bessie",
-    feedLimit: 300,
-    startTime: "2024-05-26 10:15:00",
-    endTime: "2024-05-27 11:30:00",
-    date: "2024-05-26 00:00:00.000 +00:00",
-    feedName: "Grass",
-  };
-
+describe("Parameters API", () => {
   it("should add a new parameter", () => {
-    cy.request("POST", "http://localhost:3000/parameters/add", parameter).then(
-      (response) => {
-        // Check that the response status is 201
-        expect(response.status).to.eq(201);
-
-        // Check that the response body contains the new parameter
-        expect(response.body.message).to.eq("Parameter added successfully");
-      }
-    );
+    cy.request({
+      method: "POST",
+      url: "http://localhost:3000/parameters/add",
+      body: {
+        cattleID: "02",
+        cattleName: "Bib",
+        feedLimit: 30,
+        startTime: "2024-07-12",
+        endTime: "2024-07-13",
+        date: "2024-07-12",
+        feedName: "Gross",
+      },
+    }).then((response) => {
+      expect(response.status).to.eq(201);
+      expect(response.body.message).to.eq("Parameter added successfully");
+      expect(response.body.parameter).to.have.property("cattleID", "02");
+      expect(response.body.parameter).to.have.property("cattleName", "Bib");
+      expect(response.body.parameter).to.have.property("feedLimit", 30);
+      expect(response.body.parameter).to.have.property(
+        "startTime",
+        "2024-07-12T00:00:00.000Z"
+      );
+      expect(response.body.parameter).to.have.property(
+        "endTime",
+        "2024-07-13T00:00:00.000Z"
+      );
+      expect(response.body.parameter).to.have.property(
+        "date",
+        "2024-07-12T00:00:00.000Z"
+      );
+      expect(response.body.parameter).to.have.property("feedName", "Gross");
+    });
   });
 
   it("should retrieve all parameters", () => {

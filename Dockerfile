@@ -13,8 +13,11 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
-# Expose the port the app runs on
-EXPOSE 3001
+# Copy wait-for-it.sh script
+COPY wait-for-it.sh /usr/src/app/
 
-# Command to run the application
-CMD ["npm", "start"]
+# Expose the port the app runs on
+EXPOSE 3000
+
+# Command to run the application with wait-for-it
+CMD ["./wait-for-it.sh", "postgres:5432", "--", "npm", "start"]

@@ -106,3 +106,34 @@ app.use("/events", eventRoutes); // route to get the recent event
 app.use("/download", downloadRoutes); // route to download csv and wxcel file
 // Add more route uses as needed
 ```
+
+## Docker Contenair
+
+### Data base first
+
+- 1 Stop the existing container:
+
+```shell
+docker stop backend
+docker stop postgres
+
+```
+
+- 2 Remove the existing container:
+
+```shell
+docker rm backend
+docker rm postgres
+
+
+```
+
+- 3 Run the backend container again:
+
+```shell
+docker run --name postgres -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=057193 -e POSTGRES_DB=database_development -p 5432:5432 -d postgres:13
+
+docker run --name backend --network host -e DATABASE_URL=postgres://postgres:057193@localhost:5432/database_development -p 3000:3000 my-backend
+
+
+```

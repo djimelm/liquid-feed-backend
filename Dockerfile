@@ -1,5 +1,5 @@
-# Use an official Node.js runtime as the parent image
-FROM node:14
+# Use the official Node.js image as the base image
+FROM node:16
 
 # Set the working directory
 WORKDIR /usr/src/app
@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Expose the port the app runs on
-EXPOSE 3000
+EXPOSE 3001
 
-# Define the command to run the app
-CMD ["node", "index.js"]
+# Command to run the application
+CMD ["npm", "start"]
